@@ -1,1 +1,1264 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdurayim Abduraximov - Professional Targetolog va Digital Marketolog. Marketing, SMM va Targeting sohasida 2.5+ yillik tajriba.">
+    <meta name="keywords" content="Targetolog, Digital Marketing, SMM, Facebook Ads, Marketing Specialist, Uzbekistan">
+    <meta name="author" content="Abdurayim Abduraximov">
+    <meta property="og:title" content="Abdurayim Abduraximov - Portfolio">
+    <meta property="og:description" content="Professional Targetolog va Digital Marketolog">
+    <meta property="og:type" content="website">
+    <title>Abdurayim Abduraximov - Professional Targetolog & Digital Marketolog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-cyan: #00ffff;
+            --primary-magenta: #ff00ff;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #888888;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-glow: 0 0 40px rgba(0, 255, 255, 0.3);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(0, 255, 255, 0.1);
+            border-top-color: var(--primary-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-magenta));
+            z-index: 9998;
+            transition: width 0.1s;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: -1;
+            transition: opacity 0.5s;
+        }
+
+        /* Animated Background Gradient */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #0a0a0f, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+            opacity: 0.8;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .dashboard {
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px 60px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .profile-image-container {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 40px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-magenta), var(--primary-cyan));
+            background-size: 200% 200%;
+            animation: rotate 3s linear infinite;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        @keyframes rotate {
+            0% { background-position: 0% 50%; transform: rotate(0deg); }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.02); }
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--text-primary);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.6),
+                        0 0 80px rgba(255, 0, 255, 0.4),
+                        0 0 120px rgba(0, 255, 255, 0.3),
+                        inset 0 0 20px rgba(0, 255, 255, 0.1);
+            animation: glow 2s ease-in-out infinite alternate;
+            transition: transform 0.3s;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 40px rgba(0, 255, 255, 0.6),
+                            0 0 80px rgba(255, 0, 255, 0.4),
+                            0 0 120px rgba(0, 255, 255, 0.3),
+                            inset 0 0 20px rgba(0, 255, 255, 0.1);
+            }
+            to {
+                box-shadow: 0 0 60px rgba(0, 255, 255, 0.8),
+                            0 0 100px rgba(255, 0, 255, 0.6),
+                            0 0 140px rgba(0, 255, 255, 0.5),
+                            inset 0 0 30px rgba(0, 255, 255, 0.2);
+            }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-magenta), var(--primary-cyan));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--primary-cyan);
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 255, 255, 0.1);
+            border-color: var(--primary-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
+            color: var(--text-primary);
+        }
+
+        .contact-item i {
+            color: var(--primary-cyan);
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover i {
+            transform: scale(1.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+        .card:nth-child(7) { animation-delay: 0.7s; }
+        .card:nth-child(8) { animation-delay: 0.8s; }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 60px rgba(0, 255, 255, 0.4),
+                        0 0 40px rgba(255, 0, 255, 0.2),
+                        inset 0 0 20px rgba(0, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .card:active {
+            transform: translateY(-10px) scale(1);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .card:hover h3 {
+            color: var(--primary-magenta);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: rgba(15, 15, 30, 0.98);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            margin: 30px auto;
+            padding: 50px;
+            max-width: 950px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                        0 0 40px rgba(0, 255, 255, 0.2);
+            position: relative;
+            animation: slideDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 2.2rem;
+            color: var(--primary-cyan);
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .close-btn:hover {
+            color: var(--primary-magenta);
+            transform: rotate(90deg) scale(1.1);
+            background: rgba(255, 0, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+        }
+
+        .modal h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 35px;
+            color: var(--primary-cyan);
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+            padding-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .modal-section {
+            margin-bottom: 35px;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .modal-section h3 {
+            color: var(--primary-magenta);
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-section h3::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--primary-cyan), var(--primary-magenta));
+            border-radius: 2px;
+        }
+
+        .modal-section p, .modal-section li {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .modal-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-section li {
+            position: relative;
+            padding-left: 25px;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .modal-section li:hover {
+            transform: translateX(5px);
+            color: var(--text-primary);
+        }
+
+        .modal-section li::before {
+            content: '▹';
+            color: var(--primary-cyan);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--primary-cyan);
+            padding-left: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.3s;
+            padding-bottom: 15px;
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--primary-magenta);
+            transform: translateX(5px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: var(--primary-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--primary-magenta);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+            transform: scale(1.2);
+        }
+
+        .timeline-date {
+            color: var(--primary-magenta);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            color: var(--primary-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-company {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            color: var(--primary-cyan);
+            font-size: 1.6rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(0, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .social-link:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .social-link:hover {
+            background: rgba(0, 255, 255, 0.15);
+            border-color: var(--primary-cyan);
+            transform: translateY(-8px) scale(1.15) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5),
+                        0 0 30px rgba(255, 0, 255, 0.3);
+            color: var(--primary-magenta);
+        }
+
+        .social-link i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 8px 5px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 25px;
+            color: var(--primary-cyan);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 255, 255, 0.2);
+            border-color: var(--primary-cyan);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 255, 0.2);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 50%;
+            color: var(--primary-cyan);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .grid { grid-template-columns: 1fr; gap: 20px; }
+            .modal-content { 
+                margin: 20px 10px; 
+                padding: 30px 20px; 
+                border-radius: 20px;
+            }
+            .profile-image-container {
+                width: 180px;
+                height: 180px;
+            }
+            .card {
+                padding: 25px;
+            }
+            .close-btn {
+                top: 15px;
+                right: 20px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.8rem;
+            }
+            .social-link {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 60px 15px 40px;
+            }
+            .dashboard {
+                padding: 30px 15px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        .card:focus,
+        .card:focus-visible {
+            outline: 3px solid var(--primary-cyan);
+            outline-offset: 3px;
+        }
+
+        .social-link:focus,
+        .social-link:focus-visible {
+            outline: 3px solid var(--primary-cyan);
+            outline-offset: 3px;
+        }
+
+        .close-btn:focus,
+        .close-btn:focus-visible {
+            outline: 3px solid var(--primary-cyan);
+            outline-offset: 3px;
+        }
+
+        .scroll-top:focus,
+        .scroll-top:focus-visible {
+            outline: 3px solid var(--primary-cyan);
+            outline-offset: 3px;
+        }
+
+        /* Selection Color */
+        ::selection {
+            background: rgba(0, 255, 255, 0.3);
+            color: var(--text-primary);
+        }
+
+        ::-moz-selection {
+            background: rgba(0, 255, 255, 0.3);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Video Background -->
+    <video id="video-background" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="dashboard">
+        <div class="container">
+            <div class="hero-section">
+                <div class="profile-image-container">
+                    <img src="profile.jpg" alt="Abdurayim Abduraximov" class="profile-image">
+                </div>
+                <h1>Abdurayim Abduraximov</h1>
+                <p class="subtitle">Targetolog | Digital Marketolog</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Namangan, 160100</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+998 94 305 27 27</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>abdurayimabdurahimov@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid" role="main">
+                <div class="card" onclick="openModal('about')" role="button" tabindex="0" aria-label="Men Haqimda bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('about')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-user"></i></div>
+                    <h3>Men Haqimda</h3>
+                    <p>Marketing va targetingda 2.5+ yillik tajriba. Bank sohasidan marketingga o'tgan professional.</p>
+                </div>
+
+                <div class="card" onclick="openModal('skills')" role="button" tabindex="0" aria-label="Ko'nikmalarim bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('skills')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Ko'nikmalarim</h3>
+                    <p>Strategiya, copywriting, Facebook Ads, chatbotlar, CRM va ko'plab zamonaviy marketing vositalari.</p>
+                </div>
+
+                <div class="card" onclick="openModal('experience')" role="button" tabindex="0" aria-label="Ish Tajribam bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('experience')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+                    <h3>Ish Tajribam</h3>
+                    <p>Vodiy Ta'lim va Algoritm IT kabi kompaniyalarda muvaffaqiyatli loyihalar amalga oshirdim.</p>
+                </div>
+
+                <div class="card" onclick="openModal('education')" role="button" tabindex="0" aria-label="Ta'lim bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('education')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Ta'lim</h3>
+                    <p>Professional mentorlik dasturlari va kurslar orqali doimiy rivojlanib boraman.</p>
+                </div>
+
+                <div class="card" onclick="openModal('languages')" role="button" tabindex="0" aria-label="Tillar bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('languages')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-language"></i></div>
+                    <h3>Tillar</h3>
+                    <p>O'zbek, Rus va Ingliz tillarida muloqot qilishim mumkin.</p>
+                </div>
+
+                <div class="card" onclick="openModal('interests')" role="button" tabindex="0" aria-label="Qiziqishlar bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('interests')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
+                    <h3>Qiziqishlar</h3>
+                    <p>Kitob o'qish va futbol tomosha qilish mening sevimli mashg'ulotlarim.</p>
+                </div>
+
+                <div class="card" onclick="openModal('projects')" role="button" tabindex="0" aria-label="Loyihalar bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('projects')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+                    <h3>Loyihalar</h3>
+                    <p>Muvaffaqiyatli amalga oshirilgan marketing kampaniyalari va loyihalar haqida batafsil ma'lumot.</p>
+                </div>
+
+                <div class="card" onclick="openModal('contact')" role="button" tabindex="0" aria-label="Bog'lanish bo'limini ochish" onkeypress="if(event.key==='Enter') openModal('contact')">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+                    <h3>Bog'lanish</h3>
+                    <p>Loyihangiz uchun professional marketing xizmatlarini muhokama qilish uchun men bilan bog'laning.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abdurayim-abduraximov-691894214" target="_blank" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://t.me/target_bloguz" target="_blank" class="social-link">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://www.instagram.com/abdurayim?igsh=Mmc0dzc1YTJvb3dm" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;">© 2025 Abdurayim Abduraximov. Barcha huquqlar himoyalangan.</p>
+    </div>
+
+    <!-- Modals -->
+    <div id="about-modal" class="modal" role="dialog" aria-labelledby="about-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('about')" aria-label="Yopish">&times;</button>
+            <h2 id="about-title">Men Haqimda</h2>
+            <div class="modal-section">
+                <p>Marketing, SMM va Targeting sohasida 2,5 yildan ortiq tajribaga ega mutaxassisman. 14 yil davomida bank sohasida ishlash tajribasidan keyin marketingga o'tdim.</p>
+                <p>Target reklamalari, SMM strategiyalari va copywriting orqali brendlarga auditoriyalarini jalb qilish va savdolarini oshirishda yordam beraman. Yangi bilimlarni doimiy ravishda o'rganib, amaliyotga tadbiq etib kelyapman.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills-modal" class="modal" role="dialog" aria-labelledby="skills-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('skills')" aria-label="Yopish">&times;</button>
+            <h2 id="skills-title">Ko'nikmalarim</h2>
+            <div class="modal-section">
+                <div>
+                    <span class="skill-tag">Strategiya tuzish va sotuv takliflari yaratish</span>
+                    <span class="skill-tag">Videolar va postlar uchun sotuv matnlari yozish</span>
+                    <span class="skill-tag">Facebook Ads va Target reklama</span>
+                    <span class="skill-tag">Lidogeneratsiya</span>
+                    <span class="skill-tag">Chat-botlar sozlash</span>
+                    <span class="skill-tag">CRM o'rnatish va integratsiya</span>
+                    <span class="skill-tag">Yandex Metrica</span>
+                    <span class="skill-tag">Copywriting</span>
+                    <span class="skill-tag">SMM Management</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience-modal" class="modal" role="dialog" aria-labelledby="experience-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('experience')" aria-label="Yopish">&times;</button>
+            <h2 id="experience-title">Ish Tajribam</h2>
+            <div class="modal-section" style="text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; color: var(--text-primary);">
+                    Hozirgacha 30 dan oshiq loyihalarga Target xizmatini ko'rsatganman.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; color: var(--text-primary);">
+                    Loyihalarimda Sifatli va arzon lidlar bilan ta'minlab, sotuvlarini oshirishda yordam berib kelmoqdaman.
+                </p>
+                <a href="https://t.me/target_bloguz" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 1.1rem; padding: 12px 30px; border: 2px solid var(--primary-cyan); border-radius: 30px; transition: all 0.3s; background: rgba(0, 255, 255, 0.05);" onmouseover="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(0, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(0, 255, 255, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fab fa-telegram-plane" style="font-size: 1.3rem;"></i>
+                    <span>Telegram kanalim</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="education-modal" class="modal" role="dialog" aria-labelledby="education-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('education')" aria-label="Yopish">&times;</button>
+            <h2 id="education-title">Ta'lim va Kurslar</h2>
+            <div class="modal-section">
+                <div class="timeline-item">
+                    <div class="timeline-date">Iyul 2025 - Avgust 2025</div>
+                    <div class="timeline-title">Mentorlik 1.0</div>
+                    <div class="timeline-company">Umidjon G'anijonov</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Noyabr 2024 - Yanvar 2025</div>
+                    <div class="timeline-title">Target 1x1 Mentorlik</div>
+                    <div class="timeline-company">Bahodir Sobirjonov @bakha_digital</div>
+                    <p>Professional targetologga kerak bo'ladigan barcha bilim va ko'nikmalarni o'rgandim: auditoriyalar bilan ishlash, taklif yaratish, sotuv voronkalari, copywriting, chat-bot va CRM.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Avgust 2024 - Sentabr 2024</div>
+                    <div class="timeline-title">Marketing Master Mentorlik</div>
+                    <div class="timeline-company">Abdulhamid Yakubov - Tashkent</div>
+                    <p>CustDev, taklif yaratish, analiz, kontent, jamoa boshqarish va KPI qo'yish kabi marketing bilimlarini o'rgandim.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Iyul 2024 - Sentabr 2024</div>
+                    <div class="timeline-title">Mobilografiya</div>
+                    <div class="timeline-company">KASB - Akmal Abdullayev</div>
+                    <p>Mustaqil kontent yaratish, syomka qilish va montaj qilishni o'rgandim.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Avgust 2023 - Noyabr 2023</div>
+                    <div class="timeline-title">SMM Kursi</div>
+                    <div class="timeline-company">Abror Axmedov @sincerelyabror</div>
+                    <p>SMM asoslari, kontent plan, SWOT analiz va dizayn bo'yicha bilim oldim.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Iyun 2010</div>
+                    <div class="timeline-title">Bachelor of Science: Management</div>
+                    <div class="timeline-company">Namangan Muxandislik Iqtisodiyot Instituti</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="languages-modal" class="modal" role="dialog" aria-labelledby="languages-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('languages')" aria-label="Yopish">&times;</button>
+            <h2 id="languages-title">Tillar</h2>
+            <div class="modal-section">
+                <h3>O'zbek tili</h3>
+                <p>Ona tilim</p>
+                
+                <h3>Rus tili</h3>
+                <p>O'rta daraja (B1)</p>
+                
+                <h3>Ingliz tili</h3>
+                <p>Boshlang'ich daraja (A2)</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="interests-modal" class="modal" role="dialog" aria-labelledby="interests-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('interests')" aria-label="Yopish">&times;</button>
+            <h2 id="interests-title">Qiziqishlarim</h2>
+            <div class="modal-section">
+                <p>Bo'sh vaqtlarimda kitob o'qishni va futbol tomosha qilishni yaxshi ko'raman. Bu mashg'ulotlar menga zavqlanish va yangi narsalarni o'rganish imkoniyatini beradi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects-modal" class="modal" role="dialog" aria-labelledby="projects-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('projects')" aria-label="Yopish">&times;</button>
+            <h2 id="projects-title">Loyihalar</h2>
+            <div class="modal-section" style="text-align: center;">
+                <p style="margin-bottom: 30px; color: var(--text-secondary); font-size: 1.1rem;">
+                    Barcha loyihalarim haqida batafsil ma'lumot olish uchun:
+                </p>
+                <a href="https://t.me/target_bloguz" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 1.1rem; padding: 12px 30px; border: 2px solid var(--primary-cyan); border-radius: 30px; transition: all 0.3s; background: rgba(0, 255, 255, 0.05);" onmouseover="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(0, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(0, 255, 255, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fab fa-telegram-plane" style="font-size: 1.3rem;"></i>
+                    <span>Telegram kanalim</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-modal" class="modal" role="dialog" aria-labelledby="contact-title" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('contact')" aria-label="Yopish">&times;</button>
+            <h2 id="contact-title">Bog'lanish</h2>
+            <div class="modal-section">
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; color: var(--text-primary); text-align: center;">
+                    Loyihangiz uchun professional marketing xizmatlarini muhokama qilish uchun men bilan bog'laning.
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 25px; align-items: center;">
+                    <a href="https://t.me/target_bloguz" target="_blank" style="display: flex; align-items: center; gap: 15px; color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 1.1rem; padding: 15px 35px; border: 2px solid var(--primary-cyan); border-radius: 30px; transition: all 0.3s; background: rgba(0, 255, 255, 0.05); width: 100%; max-width: 400px; justify-content: center;" onmouseover="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(0, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(0, 255, 255, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fab fa-telegram-plane" style="font-size: 1.5rem;"></i>
+                        <span>Telegram</span>
+                    </a>
+
+                    <a href="tel:+998943052727" style="display: flex; align-items: center; gap: 15px; color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 1.1rem; padding: 15px 35px; border: 2px solid var(--primary-cyan); border-radius: 30px; transition: all 0.3s; background: rgba(0, 255, 255, 0.05); width: 100%; max-width: 400px; justify-content: center;" onmouseover="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(0, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(0, 255, 255, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-phone" style="font-size: 1.5rem;"></i>
+                        <span>+998 94 305 27 27</span>
+                    </a>
+
+                    <a href="mailto:abdurayimabdurahimov@gmail.com" style="display: flex; align-items: center; gap: 15px; color: var(--primary-cyan); text-decoration: none; font-weight: 600; font-size: 1.1rem; padding: 15px 35px; border: 2px solid var(--primary-cyan); border-radius: 30px; transition: all 0.3s; background: rgba(0, 255, 255, 0.05); width: 100%; max-width: 400px; justify-content: center;" onmouseover="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(0, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(0, 255, 255, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem;"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Loading Animation
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 500);
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Modal Functions
+        function openModal(id) {
+            const modal = document.getElementById(id + '-modal');
+            if (modal) {
+                modal.style.display = 'block';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Add animation
+                setTimeout(() => {
+                    modal.querySelector('.modal-content').style.animation = 'slideDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                }, 10);
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id + '-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal on background click
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Video error handling
+        const video = document.getElementById('video-background');
+        if (video) {
+            video.addEventListener('error', function() {
+                console.log('Video could not be loaded');
+                this.style.display = 'none';
+            });
+        }
+
+        // Add ripple effect to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .card {
+                position: relative;
+                overflow: hidden;
+            }
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(0, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple-animation 0.6s ease-out;
+                pointer-events: none;
+            }
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
